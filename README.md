@@ -1,5 +1,7 @@
 # Crochets
 
+[![Build Status](https://travis-ci.org/mudasobwa/crochets.png)](https://travis-ci.org/mudasobwa/crochets)
+
 This gem is kinda syntactic sugar for setting hooks on ruby method calls.
 
 It uses [Aquarium](https://github.com/deanwampler/Aquarium) for aspects.
