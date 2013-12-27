@@ -22,22 +22,26 @@ Or install it yourself as:
 
 The usage is straightforward:
 
-    class MyClass
-      def my_method
-        puts "Hello, world!"
-      end
-    end
-        
-    @aspect = Crochets::Crocheter.hook(MyClass, :my_method, after: true, blocking: false) do |obj, *args|
-      puts "NB: world is now helloed."
-    end
+```ruby
+class MyClass
+  def my_method
+    puts "Hello, world!"
+  end
+end
     
-    # ⇒ Hello, world!
-    # ⇒ NB: world is now helloed.
+@aspect = Crochets::Crocheter.hook(MyClass, :my_method, after: true, blocking: false) do |obj, *args|
+  puts "NB: world is now helloed."
+end
+
+# ⇒ Hello, world!
+# ⇒ NB: world is now helloed.
+```
 
 The hook may then be unset:
 
-    @aspect.unhook
+```ruby
+@aspect.unhook
+```
     
 There are many hooks on the same method may be set simultaneously. They will be invoked in
 the order they were set.
