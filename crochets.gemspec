@@ -10,10 +10,10 @@ Gem::Specification.new do |s|
   s.email = 'am@mudasobwa.ru'
   s.homepage = 'http://github.com/mudasobwa/crochets'
   s.summary = %Q{Library to utilize setting hooks on Ruby classes}
-  s.description = %Q{TODO: detailed description of your gem}
+  s.description = %Q{Easy setting of hook chains on Ruby methods calls in rubtime}
   s.extra_rdoc_files = [
     'LICENSE',
-    'README.rdoc',
+    'README.md',
   ]
 
   s.required_rubygems_version = Gem::Requirement.new('>= 1.3.7')
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'yard'
   s.add_development_dependency 'cucumber'
-  s.add_development_dependency 'bueller'
+
+  s.add_dependency 'aquarium'
 end
 
