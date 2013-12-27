@@ -29,7 +29,7 @@ class MyClass
   end
 end
     
-@aspect = Crochets::Crocheter.hook(MyClass, :my_method, after: true, blocking: false) do |obj, *args|
+@aspect = Crochets.hook(MyClass, :my_method, after: true, blocking: false) do |obj, *args|
   puts "NB: world is now helloed."
 end
 

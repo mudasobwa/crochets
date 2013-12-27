@@ -1,23 +1,21 @@
 require 'bundler/setup'
 
-require 'bueller'
-Bueller::Tasks.new
-Bueller::GemcutterTasks.new
-
 require 'rspec/core/rake_task'
-RSpec::Core::RakeTask.new(:examples) do |examples|
-  examples.rspec_opts = '-Ispec'
-end
 
-RSpec::Core::RakeTask.new(:rcov) do |spec|
+desc 'Tests'
+RSpec::Core::RakeTask.new(:spec) do |spec|
   spec.rspec_opts = '-Ispec'
-  spec.rcov = true
+  # spec.rcov = true
 end
 
 require 'cucumber/rake/task'
+desc 'Cucumber'
 Cucumber::Rake::Task.new(:features)
 
-task :default => :examples
-
 require 'yard'
-YARD::Rake::YardocTask.new
+desc 'Yard'
+YARD::Rake::YardocTask.new(:yard) do |t|
+  t.files   = ['**/*.rb', 'features/**/*.feature', 'features/**/*.rb']
+end
+
+task :default => :features
